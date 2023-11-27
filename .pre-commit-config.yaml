@@ -10,7 +10,7 @@
 exclude: "AI_CHANGELOG.md"
 repos:
 -   repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: "v0.1.5"
+    rev: "v0.1.6"
     hooks:
     -   id: ruff
         args: [--fix, --exit-non-zero-on-fix, --ignore, E501]
@@ -41,11 +41,9 @@ repos:
     -   id: mixed-line-ending
     -   id: requirements-txt-fixer
 -   repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.7.0
+    rev: v1.7.1
     hooks:
     -   id: mypy
-        additional_dependencies:
-            - types-aiofiles
 -   repo: https://github.com/asottile/add-trailing-comma
     rev: v3.1.0
     hooks:
