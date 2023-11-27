@@ -7,7 +7,10 @@ This repo provides a docker setup to run the LangChain research-assistant templa
 
 - [Relevant LangChain documentation](https://python.langchain.com/docs/templates/research-assistant)
 
-- [Example LangSmith trace](https://smith.langchain.com/public/cf52fc9f-5800-4279-b61b-e15221d3a5e3/r)
+
+- Example LangSmith traces
+  - [_What is the average territory size of the Florida Scrub-Jay in Central Florida?_](https://smith.langchain.com/public/cf52fc9f-5800-4279-b61b-e15221d3a5e3/r)
+  - [_Does SWCA Environmental Consultants use AI and data science?_](https://smith.langchain.com/public/fcae93da-b87e-49a6-992c-d5034bcf82e8/r)
 
 
 ## Quickstart
