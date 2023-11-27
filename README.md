@@ -37,6 +37,7 @@ docker compose up
 
 - The service will be available at `http://localhost:8000`.
 - You can access the OpenAPI documentation at `http://localhost:8000/docs`.
+- Access the Research Playground at `http://127.0.0.1:8000/research-assistant/playground/`.
 
 - You can also use the `RemoteRunnable` class to interact with the service:
 
