@@ -27,19 +27,33 @@ This repo provides a docker setup to run the LangChain research-assistant templa
 
 ## Quickstart
 
+### Using Docker
 ```bash
-# clone the repo
-git clone https://github.com/joshuasundance-swca/langchain-research-assistant-docker.git
-cd langchain-research-assistant-docker
-
-# make a .env file
-cp .env.example .env
-nano .env
-
-# start the service
-docker compose up
+docker run -d --name langchain-research-assistant-docker \
+  -e OPENAI_API_KEY=sk-... \
+  -e LANGCHAIN_API_KEY=ls__... \
+  -e LANGCHAIN_TRACING_V2=true \
+  -e LANGCHAIN_PROJECT=langchain-research-assistant-docker \
+  -p 8000:8000 \
+  joshuasundance/langchain-research-assistant-docker:latest
 ```
 
+### Using Docker Compose
+```docker-compose.yml
+version: '3.8'
+
+services:
+  langchain-research-assistant-docker:
+    image: joshuasundance/langchain-research-assistant-docker:latest
+    container_name: langchain-research-assistant-docker
+    environment:  # use values from .env
+      - "OPENAI_API_KEY=${OPENAI_API_KEY:?OPENAI_API_KEY is not set}"  # required
+      - "LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}"  # optional
+      - "LANGCHAIN_TRACING_V2=${LANGCHAIN_TRACING_V2:-false}"  # false by default
+      - "LANGCHAIN_PROJECT=${LANGCHAIN_PROJECT:-langchain-research-assistant-docker}"
+    ports:
+      - "${APP_PORT:-8000}:8000"
+```
 
 ## Usage
 

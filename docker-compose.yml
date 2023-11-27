@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: langchain-research-assistant-docker
-    environment:
+    environment:  # use values from .env
       - "OPENAI_API_KEY=${OPENAI_API_KEY:?OPENAI_API_KEY is not set}"  # required
       - "LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}"  # optional
       - "LANGCHAIN_TRACING_V2=${LANGCHAIN_TRACING_V2:-false}"  # false by default
