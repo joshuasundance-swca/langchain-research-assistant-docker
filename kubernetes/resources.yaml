@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: langchain-research-assistant-docker
-        image: joshuasundance/langchain-research-assistant-docker:0.0.1
+        image: joshuasundance/langchain-research-assistant-docker:1.0.0
         imagePullPolicy: Always
         resources:
           requests:
