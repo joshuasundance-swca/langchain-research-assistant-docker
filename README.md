@@ -3,12 +3,17 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![python](https://img.shields.io/badge/Python-3.11-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
 
+[![Push to Docker Hub](https://github.com/joshuasundance-swca/langchain-research-assistant-docker/actions/workflows/docker-hub.yml/badge.svg)](https://github.com/joshuasundance-swca/langchain-research-assistant-docker/actions/workflows/docker-hub.yml)
+[![langchain-research-assistant-docker on Docker Hub](https://img.shields.io/docker/v/joshuasundance/langchain-research-assistant-docker?label=langchain-research-assistant-docker&logo=docker)](https://hub.docker.com/r/joshuasundance/langchain-research-assistant-docker)
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/joshuasundance/langchain-research-assistant-docker/latest)](https://hub.docker.com/r/joshuasundance/langchain-research-assistant-docker)
+
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v1.json)](https://github.com/charliermarsh/ruff)
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
+![Known Vulnerabilities](https://snyk.io/test/github/joshuasundance-swca/langchain-research-assistant-docker/badge.svg)
 
 This repo provides a docker setup to run the LangChain research-assistant template using langserve.
 
