@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  langchain-research-assistant-docker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: langchain-research-assistant-docker
+    environment:
+      - "OPENAI_API_KEY=${OPENAI_API_KEY:?OPENAI_API_KEY is not set}"  # required
+      - "LANGCHAIN_API_KEY=${LANGCHAIN_TRACING_API_KEY}"  # optional
+      - "LANGCHAIN_TRACING_V2=${LANGCHAIN_TRACING_V2:-false}"  # false by default
+      - "LANGCHAIN_PROJECT=${LANGCHAIN_PROJECT:-langchain-research-assistant-docker}"
+    ports:
+      - "${APP_PORT:-8000}:8000"

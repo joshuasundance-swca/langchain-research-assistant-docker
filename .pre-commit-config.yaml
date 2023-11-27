@@ -1,0 +1,65 @@
+# Don't know what this file is? See https://pre-commit.com/
+#   pip install pre-commit
+#   pre-commit install
+#   pre-commit autoupdate
+# Apply to all files without commiting:
+#   pre-commit run --all-files
+#   I recommend running this until you pass all checks, and then commit.
+#   Fix what you need to and then let the pre-commit hooks resolve their conflicts.
+#   You may need to git add -u between runs.
+exclude: "AI_CHANGELOG.md"
+repos:
+-   repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: "v0.1.5"
+    hooks:
+    -   id: ruff
+        args: [--fix, --exit-non-zero-on-fix, --ignore, E501]
+-   repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.9.0
+    hooks:
+    -   id: shellcheck
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    -   id: check-ast
+    -   id: check-builtin-literals
+    -   id: check-merge-conflict
+    -   id: check-symlinks
+    -   id: check-toml
+    -   id: check-xml
+    -   id: debug-statements
+    -   id: check-case-conflict
+    -   id: check-docstring-first
+    -   id: check-executables-have-shebangs
+    -   id: check-json
+#    -   id: check-yaml
+    -   id: debug-statements
+    -   id: fix-byte-order-marker
+    -   id: detect-private-key
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+    -   id: mixed-line-ending
+    -   id: requirements-txt-fixer
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.7.0
+    hooks:
+    -   id: mypy
+        additional_dependencies:
+            - types-aiofiles
+-   repo: https://github.com/asottile/add-trailing-comma
+    rev: v3.1.0
+    hooks:
+    -   id: add-trailing-comma
+#-   repo: https://github.com/dannysepler/rm_unneeded_f_str
+#    rev: v0.2.0
+#    hooks:
+#    -   id: rm-unneeded-f-str
+-   repo: https://github.com/psf/black
+    rev: 23.11.0
+    hooks:
+    -   id: black
+-   repo: https://github.com/PyCQA/bandit
+    rev: 1.7.5
+    hooks:
+    -   id: bandit
+        args: ["-x", "tests/*.py"]

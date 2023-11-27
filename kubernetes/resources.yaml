@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: langchain-research-assistant-docker-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: langchain-research-assistant-docker
+  template:
+    metadata:
+      labels:
+        app: langchain-research-assistant-docker
+    spec:
+      containers:
+      - name: langchain-research-assistant-docker
+        image: joshuasundance/langchain-research-assistant-docker:0.0.1
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "200Mi"
+          limits:
+            cpu: "500m"
+            memory: "500Mi"
+        securityContext:
+          runAsNonRoot: true
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: langchain-research-assistant-docker-service
+  # configure on Azure and uncomment below to use a vnet
+#  annotations:
+#    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+#    service.beta.kubernetes.io/azure-load-balancer-ipv4: vnet.ip.goes.here
+#    service.beta.kubernetes.io/azure-dns-label-name: "langchain-research-assistant-docker"
+spec:
+  selector:
+    app: langchain-research-assistant-docker
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  type: LoadBalancer
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: langchain-research-assistant-docker-network-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: langchain-research-assistant-docker
+  policyTypes:
+  - Ingress
+  ingress:
+  - from: []  # An empty array here means it will allow traffic from all sources.
+    ports:
+    - protocol: TCP
+      port: 8000
