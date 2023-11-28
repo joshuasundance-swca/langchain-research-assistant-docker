@@ -61,12 +61,12 @@ services:
 
 The following assumes you have a `.env` file and a Kubernetes cluster running and `kubectl` configured to access it.
 
-It creates a secret called `my-secret`. To use a different name, edit `./kubernetes/resources.yaml` as well.
+It creates a secret called `research-assistant-secret`. To use a different name, edit `./kubernetes/resources.yaml` as well.
 
 You can also edit the file and uncomment certain lines to deploy on private endpoints, with a predefined IP, etc.
 
 ```bash
-kubectl create secret generic my-secret --from-env-file=.env
+kubectl create secret generic research-assistant-secret --from-env-file=.env
 kubectl apply -f ./kubernetes/resources.yaml
 ```
 
