@@ -23,6 +23,26 @@ spec:
           limits:
             cpu: "500m"
             memory: "500Mi"
+        env:
+          - name: OPENAI_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: my-secret
+                key: OPENAI_API_KEY
+          - name: TAVILY_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: my-secret
+                key: TAVILY_API_KEY
+          - name: LANGSMITH_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: my-secret
+                key: LANGSMITH_API_KEY
+          - name: LANGSMITH_TRACING_V2
+            value: "true"
+          - name: LANGCHAIN_PROJECT
+            value: "langchain-research-assistant-docker"
         securityContext:
           runAsNonRoot: true
 ---

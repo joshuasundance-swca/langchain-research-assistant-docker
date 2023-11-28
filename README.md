@@ -57,6 +57,22 @@ services:
       - "${APP_PORT:-8000}:8000"
 ```
 
+### Kubernetes
+
+The following assumes you have a `.env` file and a Kubernetes cluster running and `kubectl` configured to access it.
+
+It creates a secret called `my-secret`. To use a different name, edit `./kubernetes/resources.yaml` as well.
+
+You can also edit the file and uncomment certain lines to deploy on private endpoints, with a predefined IP, etc.
+
+```bash
+kubectl create secret generic my-secret --from-env-file=.env
+kubectl apply -f ./kubernetes/resources.yaml
+```
+
+All deployment options are flexible and configurable.
+
+
 ## Usage
 
 - The service will be available at `http://localhost:8000`.
