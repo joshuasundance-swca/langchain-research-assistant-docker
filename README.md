@@ -31,6 +31,7 @@ This repo provides a docker setup to run the LangChain research-assistant templa
 ```bash
 docker run -d --name langchain-research-assistant-docker \
   -e OPENAI_API_KEY=sk-... \
+  -e TAVILY_API_KEY=tvly-... \
   -e LANGCHAIN_API_KEY=ls__... \
   -e LANGCHAIN_TRACING_V2=true \
   -e LANGCHAIN_PROJECT=langchain-research-assistant-docker \
@@ -48,6 +49,7 @@ services:
     container_name: langchain-research-assistant-docker
     environment:  # use values from .env
       - "OPENAI_API_KEY=${OPENAI_API_KEY:?OPENAI_API_KEY is not set}"  # required
+      - "TAVILY_API_KEY=${TAVILY_API_KEY}"  # optional
       - "LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}"  # optional
       - "LANGCHAIN_TRACING_V2=${LANGCHAIN_TRACING_V2:-false}"  # false by default
       - "LANGCHAIN_PROJECT=${LANGCHAIN_PROJECT:-langchain-research-assistant-docker}"
