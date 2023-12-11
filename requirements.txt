@@ -6,6 +6,6 @@ langchain-core==0.0.9
 langchainhub==0.1.14
 langserve==0.0.32
 langsmith==0.0.69
-openai==1.3.7
+openai==1.3.8
 pydantic==1.10.13
 tavily-python==0.2.8
