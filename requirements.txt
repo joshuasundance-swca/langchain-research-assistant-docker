@@ -2,7 +2,7 @@ beautifulsoup4==4.12.2
 duckduckgo-search==3.9.9
 langchain==0.0.345
 langchain-cli==0.0.19
-langchain-core==0.0.9
+langchain-core==0.0.12
 langchainhub==0.1.14
 langserve==0.0.32
 langsmith==0.0.69
