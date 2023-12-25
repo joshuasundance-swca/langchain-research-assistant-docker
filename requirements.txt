@@ -8,4 +8,4 @@ langserve==0.0.36
 langsmith==0.0.69
 openai==1.5.0
 pydantic==1.10.13
-tavily-python==0.2.8
+tavily-python==0.3.0
