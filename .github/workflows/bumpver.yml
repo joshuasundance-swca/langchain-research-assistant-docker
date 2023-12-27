@@ -32,5 +32,9 @@ jobs:
     - name: Install Python libraries
       run: |
         pip install --user bumpver
+    - name: git config
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
     - name: Bump version
       run: bumpver update --commit --tag-commit --${{ github.event.inputs.bump }} --push
