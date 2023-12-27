@@ -1,0 +1,36 @@
+name: Bump Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        type: choice
+        description: 'Bump major, minor, or patch version'
+        required: true
+        default: 'patch'
+        options:
+        - 'major'
+        - 'minor'
+        - 'patch'
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
+        fetch-depth: 0
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+        cache: pip
+    - name: Install Python libraries
+      run: |
+        pip install --user bumpver
+    - name: Bump version
+      run: bumpver update --commit --tag-commit --${{ github.event.inputs.bump }} --push
