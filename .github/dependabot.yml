@@ -13,3 +13,5 @@ updates:
       app:
         patterns:
           - "*"
+        exclude-patterns:
+          - "pydantic"
