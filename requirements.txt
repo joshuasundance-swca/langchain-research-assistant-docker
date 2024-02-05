@@ -7,5 +7,5 @@ langchainhub==0.1.14
 langserve==0.0.41
 langsmith==0.0.84
 openai==1.10.0
-pydantic<2
+pydantic<3
 tavily-python==0.3.1
