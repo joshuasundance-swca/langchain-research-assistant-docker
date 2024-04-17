@@ -1,6 +1,6 @@
 beautifulsoup4==4.12.3
 duckduckgo-search==4.4
-langchain==0.1.5
+langchain==0.1.11
 langchain-cli==0.0.21
 langchain-core==0.1.35
 langchainhub==0.1.14
