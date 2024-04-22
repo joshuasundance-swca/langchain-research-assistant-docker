@@ -2,10 +2,10 @@ beautifulsoup4==4.12.3
 duckduckgo-search==5.3.0
 langchain==0.1.16
 langchain-cli==0.0.21
-langchain-core==0.1.42
+langchain-core==0.1.45
 langchainhub==0.1.15
-langserve==0.0.51
-langsmith==0.1.47
-openai==1.17.1
+langserve==0.1.0
+langsmith==0.1.49
+openai==1.23.2
 pydantic<2
 tavily-python==0.3.3
